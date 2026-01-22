@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShweBeauty - Shop by Category </title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <span><i class="bi bi-truck me-2"></i>Free Shipping on Orders Over $50</span>
+                </div>
+                <div class="col-md-6 text-end d-none d-md-block">
+                    <a href="#" class="me-3"><i class="bi bi-geo-alt me-1"></i>Store Locator</a>
+                    <a href="#"><i class="bi bi-headset me-1"></i>Customer Support</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <nav class="navbar sticky-top">
+        <div class="container">
+            <!-- Mobile Menu Toggle -->
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+                <i class="bi bi-list"></i>
+            </button>
+
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html">Shwe<span>Beauty</span></a>
+
+            <!-- Desktop Nav Items - visible on lg and up -->
+            <ul class="navbar-nav main-nav d-none d-lg-flex">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="categories.html">Categories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="brands.html">Brands</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="offers.html">Offers</a>
+                </li>
+            </ul>
+
+            <!-- Right Icons -->
+            <div class="nav-right">
+                <a href="#" class="nav-icon d-none d-md-flex" title="Search">
+                    <i class="bi bi-search"></i>
+                </a>
+                <a href="#" class="nav-icon" title="Wishlist">
+                    <i class="bi bi-heart"></i>
+                </a>
+                <a href="#" class="nav-icon cart-icon" title="Cart">
+                    <i class="bi bi-bag"></i>
+                    <span class="cart-count">3</span>
+                </a>
+                <a href="#" class="nav-icon d-none d-md-flex" title="Account">
+                    <i class="bi bi-person"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Sidebar Menu -->
+    <div class="offcanvas offcanvas-start mobile-menu" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header">
+            <a class="navbar-brand" href="index.html">Shwe<span>Beauty</span></a>
+            <button type="button" class="btn-close-menu" data-bs-dismiss="offcanvas">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <div class="offcanvas-body">
+            <!-- Mobile Search -->
+            <div class="mobile-search mb-4">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search products...">
+                    <button class="btn btn-primary-pink" type="button">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Nav Links -->
+            <ul class="mobile-nav">
+                <li>
+                    <a href="index.html">
+                        <i class="bi bi-house me-3"></i>Home
+                    </a>
+                </li>
+                <li>
+                    <a href="categories.html" class="active">
+                        <i class="bi bi-grid me-3"></i>Categories
+                    </a>
+                </li>
+                <li>
+                    <a href="brands.html">
+                        <i class="bi bi-stars me-3"></i>Brands
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bi bi-percent me-3"></i>Offers
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Mobile Auth Buttons -->
+            <div class="mobile-auth mt-4 pt-4 border-top">
+                <a href="#" class="btn btn-outline-pink w-100 mb-2">Login</a>
+                <a href="#" class="btn btn-primary-pink w-100">Sign Up</a>
+            </div>
+
+            <!-- Mobile Contact Info -->
+            <div class="mobile-contact mt-4 pt-4 border-top">
+                <p class="mb-2"><i class="bi bi-telephone me-2"></i>+1 (800) SHWE-BEAUTY</p>
+                <p class="mb-0"><i class="bi bi-envelope me-2"></i>hello@shwebeauty.com</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Shop by Category</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Categories</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar Filters -->
+                <div class="col-lg-3">
+                    <div class="filter-sidebar">
+                        <!-- Category Filter -->
+                        <div class="filter-section">
+                            <h6>Category <i class="bi bi-chevron-down"></i></h6>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="cat-makeup" checked>
+                                <label class="form-check-label" for="cat-makeup">Makeup (156)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="cat-skincare">
+                                <label class="form-check-label" for="cat-skincare">Skincare (243)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="cat-hair">
+                                <label class="form-check-label" for="cat-hair">Hair Care (89)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="cat-fragrance">
+                                <label class="form-check-label" for="cat-fragrance">Fragrance (67)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="cat-bath">
+                                <label class="form-check-label" for="cat-bath">Bath & Body (112)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="cat-tools">
+                                <label class="form-check-label" for="cat-tools">Tools & Brushes (45)</label>
+                            </div>
+                        </div>
+
+                        <!-- Price Range Filter -->
+                        <div class="filter-section">
+                            <h6>Price Range <i class="bi bi-chevron-down"></i></h6>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="price-1">
+                                <label class="form-check-label" for="price-1">Under $25</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="price-2">
+                                <label class="form-check-label" for="price-2">$25 - $50</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="price-3">
+                                <label class="form-check-label" for="price-3">$50 - $100</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="price-4">
+                                <label class="form-check-label" for="price-4">$100 - $200</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="price-5">
+                                <label class="form-check-label" for="price-5">Over $200</label>
+                            </div>
+                            <div class="price-range-display mt-3">
+                                <span>$0</span>
+                                <input type="range" class="form-range" min="0" max="500" value="250">
+                                <span>$500</span>
+                            </div>
+                        </div>
+
+                        <!-- Brand Filter -->
+                        <div class="filter-section">
+                            <h6>Brand <i class="bi bi-chevron-down"></i></h6>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="brand-1">
+                                <label class="form-check-label" for="brand-1">ShweBeauty (45)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="brand-2">
+                                <label class="form-check-label" for="brand-2">Luxe Beauty (38)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="brand-3">
+                                <label class="form-check-label" for="brand-3">Glow Labs (52)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="brand-4">
+                                <label class="form-check-label" for="brand-4">Flawless Pro (29)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="brand-5">
+                                <label class="form-check-label" for="brand-5">Essence Co. (41)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="brand-6">
+                                <label class="form-check-label" for="brand-6">Color Pop (33)</label>
+                            </div>
+                            <a href="brands.html" class="text-pink small mt-2 d-inline-block">View All Brands</a>
+                        </div>
+
+                        <!-- Rating Filter -->
+                        <div class="filter-section rating-filter">
+                            <h6>Rating <i class="bi bi-chevron-down"></i></h6>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="rating-5">
+                                <label class="form-check-label" for="rating-5">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <span class="ms-1">(5.0)</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="rating-4">
+                                <label class="form-check-label" for="rating-4">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star"></i>
+                                    <span class="ms-1">(4.0+)</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="rating-3">
+                                <label class="form-check-label" for="rating-3">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star"></i>
+                                    <i class="bi bi-star"></i>
+                                    <span class="ms-1">(3.0+)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Discount Filter -->
+                        <div class="filter-section">
+                            <h6>Discount <i class="bi bi-chevron-down"></i></h6>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="disc-1">
+                                <label class="form-check-label" for="disc-1">10% and above</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="disc-2">
+                                <label class="form-check-label" for="disc-2">20% and above</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="disc-3">
+                                <label class="form-check-label" for="disc-3">30% and above</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="disc-4">
+                                <label class="form-check-label" for="disc-4">50% and above</label>
+                            </div>
+                        </div>
+
+                        <!-- Clear Filters Button -->
+                        <button class="btn btn-outline-pink w-100">Clear All Filters</button>
+                    </div>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="col-lg-9">
+                    <!-- Sort Bar -->
+                    <div class="sort-bar d-flex justify-content-between align-items-center flex-wrap gap-3">
+                        <div>
+                            <span class="text-muted">Showing 1-12 of 156 products</span>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="d-flex align-items-center gap-2">
+                                <label class="small text-nowrap">Sort by:</label>
+                                <select class="form-select form-select-sm">
+                                    <option>Popularity</option>
+                                    <option>Price: Low to High</option>
+                                    <option>Price: High to Low</option>
+                                    <option>Newest First</option>
+                                    <option>Customer Rating</option>
+                                    <option>Discount</option>
+                                </select>
+                            </div>
+                            <div class="view-options d-none d-md-flex">
+                                <button class="btn active"><i class="bi bi-grid-3x3-gap-fill"></i></button>
+                                <button class="btn"><i class="bi bi-list"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Products Row -->
+                    <div class="row g-lg-4 g-3">
+                        <!-- Product 1 -->
+                        <div class="col-xl-4 col-md-6">
+                            <div class="product-card card">
+                                <div class="product-img-wrapper">
+                                    <img src="assets/images/product-1.jpg" alt="Radiance Serum">
+                                    <span class="product-badge new">New</span>
+                                    <div class="product-wishlist">
+                                        <i class="bi bi-heart"></i>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <span class="product-brand">ShweBeauty</span>
+                                    <h5 class="card-title">Radiance Vitamin C Serum</h5>
+                                    <p class="card-text">Brightening serum for glowing skin</p>
+                                    <div class="product-rating">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <span>(124)</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="current-price">$45.00</span>
+                                        <span class="original-price">$55.00</span>
+                                        <span class="discount">18% Off</span>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <button class="btn btn-outline-pink flex-grow-1">View Details</button>
+                                        <button class="btn btn-primary-pink flex-grow-1">Add to Bag</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Product 2 -->
+                        <div class="col-xl-4 col-md-6">
+                            <div class="product-card card">
+                                <div class="product-img-wrapper">
+                                    <img src="assets/images/product-2.jpg" alt="Matte Lipstick">
+                                    <span class="product-badge sale">Sale</span>
+                                    <div class="product-wishlist">
+                                        <i class="bi bi-heart"></i>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <span class="product-brand">Luxe Beauty</span>
+                                    <h5 class="card-title">Velvet Matte Lipstick - Rose</h5>
+                                    <p class="card-text">Long-lasting matte finish lipstick</p>
+                                    <div class="product-rating">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star"></i>
+                                        <span>(89)</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="current-price">$18.00</span>
+                                        <span class="original-price">$24.00</span>
+                                        <span class="discount">25% Off</span>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <button class="btn btn-outline-pink flex-grow-1">View Details</button>
+                                        <button class="btn btn-primary-pink flex-grow-1">Add to Bag</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Product 3 -->
+                        <div class="col-xl-4 col-md-6">
+                            <div class="product-card card">
+                                <div class="product-img-wrapper">
+                                    <img src="assets/images/product-3.jpg" alt="Hydrating Moisturizer">
+                                    <div class="product-wishlist">
+                                        <i class="bi bi-heart"></i>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <span class="product-brand">Glow Labs</span>
+                                    <h5 class="card-title">Hydra Boost Moisturizer</h5>
+                                    <p class="card-text">72-hour hydration with hyaluronic acid</p>
+                                    <div class="product-rating">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <span>(256)</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="current-price">$38.00</span>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <button class="btn btn-outline-pink flex-grow-1">View Details</button>
+                                        <button class="btn btn-primary-pink flex-grow-1">Add to Bag</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Product 4 -->
+                        <div class="col-xl-4 col-md-6">
+                            <div class="product-card card">
+                                <div class="product-img-wrapper">
+                                    <img src="assets/images/product-4.jpg" alt="Foundation">
+                                    <span class="product-badge">Bestseller</span>
+                                    <div class="product-wishlist">
+                                        <i class="bi bi-heart"></i>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <span class="product-brand">Flawless Pro</span>
+                                    <h5 class="card-title">Silk Finish Foundation</h5>
+                                    <p class="card-text">Medium to full coverage, 24hr wear</p>
+                                    <div class="product-rating">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star"></i>
+                                        <span>(178)</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="current-price">$42.00</span>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <button class="btn btn-outline-pink flex-grow-1">View Details</button>
+                                        <button class="btn btn-primary-pink flex-grow-1">Add to Bag</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Product 5 -->
+                        <div class="col-xl-4 col-md-6">
+                            <div class="product-card card">
+                                <div class="product-img-wrapper">
+                                    <img src="assets/images/product-5.jpg" alt="Perfume">
+                                    <span class="product-badge new">New</span>
+                                    <div class="product-wishlist">
+                                        <i class="bi bi-heart"></i>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <span class="product-brand">Essence Co.</span>
+                                    <h5 class="card-title">Blossom Eau de Parfum</h5>
+                                    <p class="card-text">Floral notes with a hint of musk</p>
+                                    <div class="product-rating">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <span>(67)</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="current-price">$85.00</span>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <button class="btn btn-outline-pink flex-grow-1">View Details</button>
+                                        <button class="btn btn-primary-pink flex-grow-1">Add to Bag</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Product 6 -->
+                        <div class="col-xl-4 col-md-6">
+                            <div class="product-card card">
+                                <div class="product-img-wrapper">
+                                    <img src="assets/images/product-6.jpg" alt="Eye Palette">
+                                    <span class="product-badge sale">Sale</span>
+                                    <div class="product-wishlist">
+                                        <i class="bi bi-heart"></i>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <span class="product-brand">Color Pop</span>
+                                    <h5 class="card-title">Sunset Dreams Eye Palette</h5>
+                                    <p class="card-text">12 highly pigmented shades</p>
+                                    <div class="product-rating">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star"></i>
+                                        <span>(203)</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="current-price">$32.00</span>
+                                        <span class="original-price">$45.00</span>
+                                        <span class="discount">29% Off</span>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <button class="btn btn-outline-pink flex-grow-1">View Details</button>
+                                        <button class="btn btn-primary-pink flex-grow-1">Add to Bag</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Product 7 -->
+                        <div class="col-xl-4 col-md-6">
+                            <div class="product-card card">
+                                <div class="product-img-wrapper">
+                                    <img src="assets/images/product-7.jpg" alt="Hair Mask">
+                                    <div class="product-wishlist">
+                                        <i class="bi bi-heart"></i>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <span class="product-brand">Silk Strands</span>
+                                    <h5 class="card-title">Repair & Restore Hair Mask</h5>
+                                    <p class="card-text">Deep conditioning treatment</p>
+                                    <div class="product-rating">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <span>(145)</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="current-price">$28.00</span>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <button class="btn btn-outline-pink flex-grow-1">View Details</button>
+                                        <button class="btn btn-primary-pink flex-grow-1">Add to Bag</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Product 8 -->
+                        <div class="col-xl-4 col-md-6">
+                            <div class="product-card card">
+                                <div class="product-img-wrapper">
+                                    <img src="assets/images/product-8.jpg" alt="Sheet Mask Set">
+                                    <span class="product-badge">Bestseller</span>
+                                    <div class="product-wishlist">
+                                        <i class="bi bi-heart"></i>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <span class="product-brand">K-Glow</span>
+                                    <h5 class="card-title">Sheet Mask Collection (7pc)</h5>
+                                    <p class="card-text">Weekly skincare treat set</p>
+                                    <div class="product-rating">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star"></i>
+                                        <span>(312)</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="current-price">$24.00</span>
+                                        <span class="original-price">$35.00</span>
+                                        <span class="discount">31% Off</span>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <button class="btn btn-outline-pink flex-grow-1">View Details</button>
+                                        <button class="btn btn-primary-pink flex-grow-1">Add to Bag</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Product 9 -->
+                        <div class="col-xl-4 col-md-6">
+                            <div class="product-card card">
+                                <div class="product-img-wrapper">
+                                    <img src="assets/images/product-9.jpg" alt="Cleansing Oil">
+                                    <div class="product-wishlist">
+                                        <i class="bi bi-heart"></i>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <span class="product-brand">Pure Skin</span>
+                                    <h5 class="card-title">Gentle Cleansing Oil</h5>
+                                    <p class="card-text">Removes makeup & impurities</p>
+                                    <div class="product-rating">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star"></i>
+                                        <span>(98)</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="current-price">$29.00</span>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <button class="btn btn-outline-pink flex-grow-1">View Details</button>
+                                        <button class="btn btn-primary-pink flex-grow-1">Add to Bag</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Product 10 -->
+                        <div class="col-xl-4 col-md-6">
+                            <div class="product-card card">
+                                <div class="product-img-wrapper">
+                                    <img src="assets/images/product-10.jpg" alt="Setting Spray">
+                                    <span class="product-badge sale">Sale</span>
+                                    <div class="product-wishlist">
+                                        <i class="bi bi-heart"></i>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <span class="product-brand">Flawless Pro</span>
+                                    <h5 class="card-title">All Day Setting Spray</h5>
+                                    <p class="card-text">Locks makeup for 16 hours</p>
+                                    <div class="product-rating">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <span>(187)</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="current-price">$22.00</span>
+                                        <span class="original-price">$28.00</span>
+                                        <span class="discount">21% Off</span>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <button class="btn btn-outline-pink flex-grow-1">View Details</button>
+                                        <button class="btn btn-primary-pink flex-grow-1">Add to Bag</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Product 11 -->
+                        <div class="col-xl-4 col-md-6">
+                            <div class="product-card card">
+                                <div class="product-img-wrapper">
+                                    <img src="assets/images/product-11.jpg" alt="Mascara">
+                                    <span class="product-badge new">New</span>
+                                    <div class="product-wishlist">
+                                        <i class="bi bi-heart"></i>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <span class="product-brand">Luxe Beauty</span>
+                                    <h5 class="card-title">Volume Max Mascara</h5>
+                                    <p class="card-text">Dramatic volume & length</p>
+                                    <div class="product-rating">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star"></i>
+                                        <span>(156)</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="current-price">$26.00</span>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <button class="btn btn-outline-pink flex-grow-1">View Details</button>
+                                        <button class="btn btn-primary-pink flex-grow-1">Add to Bag</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Product 12 -->
+                        <div class="col-xl-4 col-md-6">
+                            <div class="product-card card">
+                                <div class="product-img-wrapper">
+                                    <img src="assets/images/product-12.jpg" alt="Body Lotion">
+                                    <div class="product-wishlist">
+                                        <i class="bi bi-heart"></i>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <span class="product-brand">Essence Co.</span>
+                                    <h5 class="card-title">Silk Body Lotion</h5>
+                                    <p class="card-text">Luxuriously soft & fragrant</p>
+                                    <div class="product-rating">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <span>(223)</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="current-price">$35.00</span>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <button class="btn btn-outline-pink flex-grow-1">View Details</button>
+                                        <button class="btn btn-primary-pink flex-grow-1">Add to Bag</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <nav class="mt-4">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#"><i class="bi bi-chevron-left"></i></a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">4</a></li>
+                            <li class="page-item"><a class="page-link" href="#">5</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#"><i class="bi bi-chevron-right"></i></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container text-center">
+            <h2>Join the ShweBeauty Family</h2>
+            <p>Subscribe to our newsletter for exclusive offers, beauty tips, and new arrivals</p>
+            <form class="newsletter-form">
+                <div class="input-group">
+                    <input type="email" class="form-control" placeholder="Enter your email address">
+                    <button class="btn btn-black" type="submit">Subscribe</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- About -->
+                <div class="col-xl-4 col-md-6 mb-4">
+                    <a href="index.html" class="footer-brand">Shwe<span>Beauty</span></a>
+                    <p>Your one-stop destination for premium beauty products. We bring you the best from global brands to help you look and feel your best every day.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                        <a href="#"><i class="bi bi-pinterest"></i></a>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="brands.html">Brands</a></li>
+                        <li><a href="#">New Arrivals</a></li>
+                        <li><a href="#">Bestsellers</a></li>
+                        <li><a href="#">Offers</a></li>
+                    </ul>
+                </div>
+                <!-- Customer Service -->
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Customer Service</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <!-- Contact Info -->
+                <div class="col-xl-4 col-md-6 mb-4">
+                    <h5>Contact Us</h5>
+                    <ul class="footer-links">
+                        <li><i class="bi bi-geo-alt me-2"></i>123 Beauty Lane, Fashion District</li>
+                        <li><i class="bi bi-envelope me-2"></i>hello@shwebeauty.com</li>
+                        <li><i class="bi bi-telephone me-2"></i>+1 (800) SHWE-BEAUTY</li>
+                        <li><i class="bi bi-clock me-2"></i>Mon - Sat: 9:00 AM - 8:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p>&copy; 2024 ShweBeauty. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="payment-icons">
+                            <img src="assets/images/payment-visa.png" alt="Visa">
+                            <img src="assets/images/payment-mastercard.png" alt="Mastercard">
+                            <img src="assets/images/payment-paypal.png" alt="PayPal">
+                            <img src="assets/images/payment-applepay.png" alt="Apple Pay">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

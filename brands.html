@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShweBeauty - Shop by Brand</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <span><i class="bi bi-truck me-2"></i>Free Shipping on Orders Over $50</span>
+                </div>
+                <div class="col-md-6 text-end d-none d-md-block">
+                    <a href="#" class="me-3"><i class="bi bi-geo-alt me-1"></i>Store Locator</a>
+                    <a href="#"><i class="bi bi-headset me-1"></i>Customer Support</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <nav class="navbar sticky-top">
+        <div class="container">
+            <!-- Mobile Menu Toggle -->
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+                <i class="bi bi-list"></i>
+            </button>
+
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html">Shwe<span>Beauty</span></a>
+
+            <!-- Desktop Nav Items - visible on lg and up -->
+            <ul class="navbar-nav main-nav d-none d-lg-flex">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="categories.html">Categories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="brands.html">Brands</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="offers.html">Offers</a>
+                </li>
+            </ul>
+
+            <!-- Right Icons -->
+            <div class="nav-right">
+                <a href="#" class="nav-icon d-none d-md-flex" title="Search">
+                    <i class="bi bi-search"></i>
+                </a>
+                <a href="#" class="nav-icon" title="Wishlist">
+                    <i class="bi bi-heart"></i>
+                </a>
+                <a href="#" class="nav-icon cart-icon" title="Cart">
+                    <i class="bi bi-bag"></i>
+                    <span class="cart-count">3</span>
+                </a>
+                <a href="#" class="nav-icon d-none d-md-flex" title="Account">
+                    <i class="bi bi-person"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Sidebar Menu -->
+    <div class="offcanvas offcanvas-start mobile-menu" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header">
+            <a class="navbar-brand" href="index.html">Shwe<span>Beauty</span></a>
+            <button type="button" class="btn-close-menu" data-bs-dismiss="offcanvas">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <div class="offcanvas-body">
+            <!-- Mobile Search -->
+            <div class="mobile-search mb-4">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search products...">
+                    <button class="btn btn-primary-pink" type="button">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Nav Links -->
+            <ul class="mobile-nav">
+                <li>
+                    <a href="index.html">
+                        <i class="bi bi-house me-3"></i>Home
+                    </a>
+                </li>
+                <li>
+                    <a href="categories.html">
+                        <i class="bi bi-grid me-3"></i>Categories
+                    </a>
+                </li>
+                <li>
+                    <a href="brands.html" class="active">
+                        <i class="bi bi-stars me-3"></i>Brands
+                    </a>
+                </li>
+                <li>
+                    <a href="offers.html">
+                        <i class="bi bi-percent me-3"></i>Offers
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Mobile Auth Buttons -->
+            <div class="mobile-auth mt-4 pt-4 border-top">
+                <a href="#" class="btn btn-outline-pink w-100 mb-2">Login</a>
+                <a href="#" class="btn btn-primary-pink w-100">Sign Up</a>
+            </div>
+
+            <!-- Mobile Contact Info -->
+            <div class="mobile-contact mt-4 pt-4 border-top">
+                <p class="mb-2"><i class="bi bi-telephone me-2"></i>+1 (800) SHWE-BEAUTY</p>
+                <p class="mb-0"><i class="bi bi-envelope me-2"></i>hello@shwebeauty.com</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Brands Hero Section -->
+    <section class="brands-hero">
+        <div class="brands-hero-bg" style="background-image: url('assets/images/brands-hero.jpg');"></div>
+        <div class="brands-hero-overlay"></div>
+        <div class="container">
+            <div class="brands-hero-content text-center">
+                <span class="brands-subtitle">Discover Premium Beauty</span>
+                <h1>Our Brands</h1>
+                <p>Explore 100+ curated beauty brands from around the world</p>
+                <!-- Search Bar -->
+                <div class="brands-search-box">
+                    <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Search for brands...">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Brands Showcase -->
+    <section class="featured-brands-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-badge">Exclusive Partners</span>
+                <h2>Featured Brands</h2>
+            </div>
+            <div class="featured-brands-grid">
+                <!-- Featured Brand 1 -->
+                <div class="featured-brand-card featured-large">
+                    <div class="featured-brand-img1">
+                        <img src="assets/images/brand-featured-1.jpg" alt="ShweBeauty">
+                        <div class="featured-overlay"></div>
+                    </div>
+                    <div class="featured-brand-content1">
+                        <span class="brand-tag">Premium Partner</span>
+                        <h3>ShweBeauty</h3>
+                        <p>Premium skincare crafted with natural ingredients</p>
+                        <a href="#" class="btn btn-white">Explore Collection</a>
+                    </div>
+                </div>
+                <!-- Featured Brand 2 -->
+                <div class="featured-brand-card">
+                    <div class="featured-brand-img2">
+                        <img src="assets/images/brand-featured-2.jpg" alt="Luxe Beauty">
+                        <div class="featured-overlay"></div>
+                    </div>
+                    <div class="featured-brand-content2">
+                        <h3>Luxe Beauty</h3>
+                    </div>
+                </div>
+                <!-- Featured Brand 3 -->
+                <div class="featured-brand-card">
+                    <div class="featured-brand-img3">
+                        <img src="assets/images/brand-featured-3.jpg" alt="Glow Labs">
+                        <div class="featured-overlay"></div>
+                    </div>
+                    <div class="featured-brand-content3">
+                        <h3>Glow Labs</h3>
+                    </div>
+                </div>
+                <!-- Featured Brand 4 -->
+                <div class="featured-brand-card">
+                    <div class="featured-brand-img4">
+                        <img src="data:image/jpeg;base64,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" alt="K-Glow">
+                        <div class="featured-overlay"></div>
+                    </div>
+                    <div class="featured-brand-content4">
+                        <h3>K-Glow</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Categories -->
+    <section class="brand-categories-section">
+        <div class="container">
+            <div class="brand-category-tabs">
+                <button class="brand-tab active" data-category="all">All Brands</button>
+                <button class="brand-tab" data-category="skincare">Skincare</button>
+                <button class="brand-tab" data-category="makeup">Makeup</button>
+                <button class="brand-tab" data-category="haircare">Hair Care</button>
+                <button class="brand-tab" data-category="fragrance">Fragrance</button>
+                <button class="brand-tab" data-category="kbeauty">K-Beauty</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Brands Grid -->
+    <section class="all-brands-section bg-light-pink">
+        <div class="container">
+            <!-- Alphabet Quick Nav -->
+            <div class="alphabet-quick-nav">
+                <a href="#" class="active">A</a>
+                <a href="#">B</a>
+                <a href="#">C</a>
+                <a href="#">D</a>
+                <a href="#">E</a>
+                <a href="#">F</a>
+                <a href="#">G</a>
+                <a href="#">H</a>
+                <a href="#">I-K</a>
+                <a href="#">L</a>
+                <a href="#">M-N</a>
+                <a href="#">O-P</a>
+                <a href="#">R-S</a>
+                <a href="#">T-Z</a>
+            </div>
+
+            <!-- Product Slider -->
+            <div class="section-header text-center mb-4">
+                <span class="section-badge">Best Sellers</span>
+                <h2>Trending Products</h2>
+            </div>
+
+            <div class="product-swiper-container">
+                <!-- Swiper Navigation -->
+                <div class="swiper-button-prev product-swiper-prev"></div>
+
+                <div class="swiper product-swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Product 1 -->
+                        <div class="swiper-slide">
+                            <div class="product-slide-card">
+                                <div class="product-slide-img">
+                                    <img src="assets/images/product-1.jpg" alt="Retinol Anti Ageing Serum">
+                                    <span class="product-slide-badge">Bestseller</span>
+                                    <button class="product-slide-wishlist"><i class="bi bi-heart"></i></button>
+                                    <button class="product-slide-quick"><i class="bi bi-plus-lg"></i></button>
+                                </div>
+                                <div class="product-slide-info">
+                                    <span class="product-slide-brand">Orimii</span>
+                                    <h4 class="product-slide-title">No Retinol Anti Ageing 1% Serum</h4>
+                                    <span class="product-slide-size"><i class="bi bi-droplet"></i> 30ml</span>
+                                    <div class="product-slide-price">
+                                        <span class="price-current">&#8377;626</span>
+                                        <span class="price-original">&#8377;695</span>
+                                        <span class="price-discount">10%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Product 2 -->
+                        <div class="swiper-slide">
+                            <div class="product-slide-card">
+                                <div class="product-slide-img">
+                                    <img src="assets/images/product-2.jpg" alt="Baby Lotion">
+                                    <span class="product-slide-badge new">New</span>
+                                    <button class="product-slide-wishlist"><i class="bi bi-heart"></i></button>
+                                    <button class="product-slide-quick"><i class="bi bi-plus-lg"></i></button>
+                                </div>
+                                <div class="product-slide-info">
+                                    <span class="product-slide-brand">Himalaya</span>
+                                    <h4 class="product-slide-title">Baby Lotion</h4>
+                                    <span class="product-slide-size"><i class="bi bi-droplet"></i> 400ml</span>
+                                    <div class="product-slide-price">
+                                        <span class="price-current">&#8377;336</span>
+                                        <span class="price-original">&#8377;400</span>
+                                        <span class="price-discount">16%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Product 3 -->
+                        <div class="swiper-slide">
+                            <div class="product-slide-card">
+                                <div class="product-slide-img">
+                                    <img src="assets/images/product-3.jpg" alt="Baby Daily Moisturizing">
+                                    <span class="product-slide-badge sale">Sale</span>
+                                    <button class="product-slide-wishlist"><i class="bi bi-heart"></i></button>
+                                    <button class="product-slide-quick"><i class="bi bi-plus-lg"></i></button>
+                                </div>
+                                <div class="product-slide-info">
+                                    <span class="product-slide-brand">Aveeno</span>
+                                    <h4 class="product-slide-title">Baby Daily Moisturizing Lotion</h4>
+                                    <span class="product-slide-size"><i class="bi bi-droplet"></i> 227gm</span>
+                                    <div class="product-slide-price">
+                                        <span class="price-current">&#8377;1,643</span>
+                                        <span class="price-original">&#8377;2,020</span>
+                                        <span class="price-discount">18%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Product 4 -->
+                        <div class="swiper-slide">
+                            <div class="product-slide-card">
+                                <div class="product-slide-img">
+                                    <img src="assets/images/product-4.jpg" alt="Baby Moisture Lotion">
+                                    <button class="product-slide-wishlist"><i class="bi bi-heart"></i></button>
+                                    <button class="product-slide-quick"><i class="bi bi-plus-lg"></i></button>
+                                </div>
+                                <div class="product-slide-info">
+                                    <span class="product-slide-brand">Aveeno</span>
+                                    <h4 class="product-slide-title">Baby Daily Moisture Lotion for Dry Skin</h4>
+                                    <span class="product-slide-size"><i class="bi bi-droplet"></i> 227gm</span>
+                                    <div class="product-slide-price">
+                                        <span class="price-current">&#8377;859</span>
+                                        <span class="price-original">&#8377;1,050</span>
+                                        <span class="price-discount">18%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Product 5 -->
+                        <div class="swiper-slide">
+                            <div class="product-slide-card">
+                                <div class="product-slide-img">
+                                    <img src="assets/images/product-5.jpg" alt="Aveeno Baby Lotion">
+                                    <span class="product-slide-badge">Popular</span>
+                                    <button class="product-slide-wishlist"><i class="bi bi-heart"></i></button>
+                                    <button class="product-slide-quick"><i class="bi bi-plus-lg"></i></button>
+                                </div>
+                                <div class="product-slide-info">
+                                    <span class="product-slide-brand">Aveeno</span>
+                                    <h4 class="product-slide-title">Baby Daily Moisture Lotion</h4>
+                                    <span class="product-slide-size"><i class="bi bi-droplet"></i> 100g</span>
+                                    <div class="product-slide-price">
+                                        <span class="price-current">&#8377;525</span>
+                                        <span class="price-original">&#8377;550</span>
+                                        <span class="price-discount">4%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Product 6 -->
+                        <div class="swiper-slide">
+                            <div class="product-slide-card">
+                                <div class="product-slide-img">
+                                    <img src="assets/images/product-6.jpg" alt="Soothing Relief Face Cream">
+                                    <button class="product-slide-wishlist"><i class="bi bi-heart"></i></button>
+                                    <button class="product-slide-quick"><i class="bi bi-plus-lg"></i></button>
+                                </div>
+                                <div class="product-slide-info">
+                                    <span class="product-slide-brand">Aveeno</span>
+                                    <h4 class="product-slide-title">Baby Soothing Relief Face Cream</h4>
+                                    <span class="product-slide-size"><i class="bi bi-droplet"></i> 227gm</span>
+                                    <div class="product-slide-price">
+                                        <span class="price-current">&#8377;1,196</span>
+                                        <span class="price-original">&#8377;1,300</span>
+                                        <span class="price-discount">8%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Product 7 -->
+                        <div class="swiper-slide">
+                            <div class="product-slide-card">
+                                <div class="product-slide-img">
+                                    <img src="assets/images/product-7.jpg" alt="Baby Dove Rich Moisture">
+                                    <span class="product-slide-badge sale">Sale</span>
+                                    <button class="product-slide-wishlist"><i class="bi bi-heart"></i></button>
+                                    <button class="product-slide-quick"><i class="bi bi-plus-lg"></i></button>
+                                </div>
+                                <div class="product-slide-info">
+                                    <span class="product-slide-brand">Dove</span>
+                                    <h4 class="product-slide-title">Baby Dove Rich Moisture Lotion</h4>
+                                    <span class="product-slide-size"><i class="bi bi-droplet"></i> 2 Sizes</span>
+                                    <div class="product-slide-price">
+                                        <span class="price-current">&#8377;48</span>
+                                        <span class="price-original">&#8377;62</span>
+                                        <span class="price-discount">23%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Product 8 -->
+                        <div class="swiper-slide">
+                            <div class="product-slide-card">
+                                <div class="product-slide-img">
+                                    <img src="assets/images/product-8.jpg" alt="Himalaya Baby Cream">
+                                    <button class="product-slide-wishlist"><i class="bi bi-heart"></i></button>
+                                    <button class="product-slide-quick"><i class="bi bi-plus-lg"></i></button>
+                                </div>
+                                <div class="product-slide-info">
+                                    <span class="product-slide-brand">Himalaya</span>
+                                    <h4 class="product-slide-title">Baby Cream with Olive Oil</h4>
+                                    <span class="product-slide-size"><i class="bi bi-droplet"></i> 200ml</span>
+                                    <div class="product-slide-price">
+                                        <span class="price-current">&#8377;299</span>
+                                        <span class="price-original">&#8377;350</span>
+                                        <span class="price-discount">15%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Product 9 -->
+                        <div class="swiper-slide">
+                            <div class="product-slide-card">
+                                <div class="product-slide-img">
+                                    <img src="assets/images/product-9.jpg" alt="Mamaearth Baby Lotion">
+                                    <span class="product-slide-badge organic">Organic</span>
+                                    <button class="product-slide-wishlist"><i class="bi bi-heart"></i></button>
+                                    <button class="product-slide-quick"><i class="bi bi-plus-lg"></i></button>
+                                </div>
+                                <div class="product-slide-info">
+                                    <span class="product-slide-brand">Mamaearth</span>
+                                    <h4 class="product-slide-title">Milky Soft Body Lotion for Babies</h4>
+                                    <span class="product-slide-size"><i class="bi bi-droplet"></i> 400ml</span>
+                                    <div class="product-slide-price">
+                                        <span class="price-current">&#8377;399</span>
+                                        <span class="price-original">&#8377;499</span>
+                                        <span class="price-discount">20%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-button-next product-swiper-next"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Story Section -->
+    <section class="bg-light-pink py-5 brand-story-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="brand-story-img">
+                        <img src="assets/images/offer-banner-1.jpg" alt="Our Story">
+                        <div class="story-badge">
+                            <span class="story-number">100+</span>
+                            <span class="story-text">Global Brands</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="brand-story-content">
+                        <span class="section-badge">Our Promise</span>
+                        <h2>Curated With Care</h2>
+                        <p class="lead">We partner with world-renowned beauty brands to bring you the finest products for your skincare and beauty routine.</p>
+                        <div class="story-features">
+                            <div class="story-feature">
+                                <i class="bi bi-check-circle-fill"></i>
+                                <span>100% Authentic Products</span>
+                            </div>
+                            <div class="story-feature">
+                                <i class="bi bi-check-circle-fill"></i>
+                                <span>Direct Brand Partnerships</span>
+                            </div>
+                            <div class="story-feature">
+                                <i class="bi bi-check-circle-fill"></i>
+                                <span>Fresh Stock Guarantee</span>
+                            </div>
+                            <div class="story-feature">
+                                <i class="bi bi-check-circle-fill"></i>
+                                <span>Expert Curated Selection</span>
+                            </div>
+                        </div>
+                        <a href="categories.html" class="btn btn-primary-pink btn-lg mt-4">Shop All Products</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container text-center">
+            <h2>Get Brand Updates</h2>
+            <p>Be the first to know about new brand arrivals and exclusive launches</p>
+            <form class="newsletter-form">
+                <div class="input-group">
+                    <input type="email" class="form-control" placeholder="Enter your email address">
+                    <button class="btn btn-black" type="submit">Subscribe</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- About -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <a href="index.html" class="footer-brand">Shwe<span>Beauty</span></a>
+                    <p>Your one-stop destination for premium beauty products. We bring you the best from global brands to help you look and feel your best every day.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                        <a href="#"><i class="bi bi-pinterest"></i></a>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="brands.html">Brands</a></li>
+                        <li><a href="offers.html">Offers</a></li>
+                    </ul>
+                </div>
+                <!-- Customer Service -->
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Customer Service</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <!-- Contact Info -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5>Contact Us</h5>
+                    <ul class="footer-links">
+                        <li><i class="bi bi-geo-alt me-2"></i>123 Beauty Lane, Fashion District</li>
+                        <li><i class="bi bi-envelope me-2"></i>hello@shwebeauty.com</li>
+                        <li><i class="bi bi-telephone me-2"></i>+1 (800) SHWE-BEAUTY</li>
+                        <li><i class="bi bi-clock me-2"></i>Mon - Sat: 9:00 AM - 8:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p>&copy; 2024 ShweBeauty. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="payment-icons">
+                            <img src="assets/images/payment-visa.png" alt="Visa">
+                            <img src="assets/images/payment-mastercard.png" alt="Mastercard">
+                            <img src="assets/images/payment-paypal.png" alt="PayPal">
+                            <img src="assets/images/payment-applepay.png" alt="Apple Pay">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Product Swiper Init -->
+    <script>
+        const productSwiper = new Swiper('.product-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
+            speed: 800,
+            navigation: {
+                nextEl: '.product-swiper-next',
+                prevEl: '.product-swiper-prev',
+            },
+            breakpoints: {
+                576: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                992: {
+                    slidesPerView: 3,
+                    spaceBetween: 25,
+                },
+            },
+        });
+    </script>
+</body>
+</html>
